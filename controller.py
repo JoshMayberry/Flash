@@ -154,13 +154,14 @@ class GUI_Builder():
 				mainSizer.growFlexColumnAll()
 				mainSizer.growFlexRowAll()
 
-				topSizer, bottomSizer = mainSizer.addSplitterDouble(minimumSize = 20, vertical = True, dividerPosition = 130, dividerGravity = 0, panel_0 = {"border": "raised"}, panel_1 = {"border": "raised"})
+				leftSizer, rightSizer = mainSizer.addSplitterDouble(minimumSize = 20, vertical = True, dividerPosition = 130, dividerGravity = 0, panel_0 = {"border": "raised"}, panel_1 = {"border": "raised"})
 
-				with topSizer as mySizer:
+				with leftSizer as mySizer:
 					mySizer.addText("List all cards here")
 
-				with bottomSizer as mySizer:
-					mySizer.addText("Edit data fields here in a grid")
+				with rightSizer as mySizer:
+					with mySizer.addTable(label = "cardTable", rows = 10, columns = 10, editOnEnter = True) as cardTable: 
+						pass
 
 				mainSizer.addButton("Show Selected Card")
 
@@ -184,13 +185,27 @@ class GUI_Builder():
 				mainSizer.growFlexColumnAll()
 				mainSizer.growFlexRowAll()
 
-				topSizer, bottomSizer = mainSizer.addSplitterDouble(minimumSize = 20, vertical = True, dividerPosition = 130, dividerGravity = 0, panel_0 = {"border": "raised"}, panel_1 = {"border": "raised"})
+				mainSizer.addListTree(choices = {"Lorem": [{"Ipsum": "Dolor"}, "Sit"], "Amet": None})
 
-				with topSizer as mySizer:
-					mySizer.addText("List all formats here")
+				# leftSizer, rightSizer = mainSizer.addSplitterDouble(minimumSize = 20, vertical = True, dividerPosition = 130, dividerGravity = 0, panel_0 = {"border": "raised"}, panel_1 = {"border": "raised"})
 
-				with bottomSizer as mySizer:
-					mySizer.addText("Edit data fields here in a grid")
+				# with leftSizer as mySizer:
+				# 	mySizer.addListFull()#["Lorem", "Ipsum", "Dolor", "Sit", "Amet"])
+
+				# with rightSizer as mySizer:
+				# 	leftSubSizer, rightSubSizer = mySizer.addSplitterDouble(minimumSize = 20, vertical = True, dividerPosition = 130, dividerGravity = 0, panel_0 = {"border": "raised"}, panel_1 = {"border": "raised"})
+
+				# 	with leftSubSizer as mySubSizer:
+				# 		topSubSubSizer, bottomSubSubSizer = mySizer.addSplitterDouble(minimumSize = 20, vertical = False, dividerPosition = 130, dividerGravity = 0, panel_0 = {"border": "raised"}, panel_1 = {"border": "raised"})
+						
+				# 		with topSubSubSizer as mySubSubSizer:
+				# 			mySubSubSizer.addListFull(["Container - Grid", "Container - Flex", "Text", "Image"])
+
+				# 		with bottomSubSubSizer as mySubSubSizer:
+				# 			mySubSubSizer.addText("Edit selected item attributes here")
+
+				# 	with rightSubSizer as mySubSizer:
+				# 		mySubSizer.addListTree()
 
 				mainSizer.addButton("Preview Selected Format")
 
