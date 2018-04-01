@@ -183,9 +183,45 @@ class GUI_Builder():
 			#Setup for content
 			with myFrame.addSizerGridFlex(rows = 3, columns = 1) as mainSizer:
 				mainSizer.growFlexColumnAll()
-				mainSizer.growFlexRowAll()
+				mainSizer.growFlexRow(0)
 
-				mainSizer.addListTree(choices = {"Lorem": [{"Ipsum": "Dolor"}, "Sit"], "Amet": None})
+
+				# mainSizer.addListTree(choices = {"Lorem": [{"Ipsum": "Dolor"}, "Sit"], "Amet": None})
+
+				# with mainSizer.addAui() as myAui:
+				with myFrame.addAui() as myAui:
+					pass
+					with myAui.addPane(default = "center") as myAuiPane:
+						# myAuiPane.addText("Lorem")
+						pass
+					with myAui.addPane() as myAuiPane:
+						# myAuiPane.addText("Ipsum")
+						pass
+					with myAui.addPane() as myAuiPane:
+						# myAuiPane.addText("Dolor")
+						pass
+					with myAui.addPane() as myAuiPane:
+						# myAuiPane.addText("Sit")
+						pass
+					with myAui.addPane() as myAuiPane:
+						# myAuiPane.addText("Amet")
+						pass
+					# with myAui.addAuiNotebook() as myNotebook:
+					# 	#General
+					# 	with myNotebook.addPage(text = "One", sizer = {"type": "flex", "rows": 7, "columns": 1}) as myNotebookPage:
+					# 		myNotebookPage.addText("1")
+
+					# 	with myNotebook.addPage(text = "Two", sizer = {"type": "flex", "rows": 7, "columns": 1}) as myNotebookPage:
+					# 		myNotebookPage.addText("2")
+
+					# 	with myNotebook.addPage(text = "Three", sizer = {"type": "flex", "rows": 7, "columns": 1}) as myNotebookPage:
+					# 		myNotebookPage.addText("3")
+
+					# 	with myNotebook.addPage(text = "Four", sizer = {"type": "flex", "rows": 7, "columns": 1}) as myNotebookPage:
+					# 		myNotebookPage.addText("4")
+
+					# 	with myNotebook.addPage(text = "Five", sizer = {"type": "flex", "rows": 7, "columns": 1}) as myNotebookPage:
+					# 		myNotebookPage.addText("5")
 
 				# leftSizer, rightSizer = mainSizer.addSplitterDouble(minimumSize = 20, vertical = True, dividerPosition = 130, dividerGravity = 0, panel_0 = {"border": "raised"}, panel_1 = {"border": "raised"})
 
@@ -207,7 +243,7 @@ class GUI_Builder():
 				# 	with rightSubSizer as mySubSizer:
 				# 		mySubSizer.addListTree()
 
-				mainSizer.addButton("Preview Selected Format")
+				# mainSizer.addButton("Preview Selected Format")
 
 	def buildViewCards(self):
 		"""View the flash cards.

@@ -90,9 +90,7 @@ class DemoFrame(wx.Frame):
 		self._notebook_style = self.notebook.default_style
  
 		# add notebook to AUI manager
-		self.aui_mgr.AddPane(self.notebook, 
-							 aui.AuiPaneInfo().Name("notebook_content").
-							 CenterPane().PaneBorder(False)) 
+		self.aui_mgr.AddPane(self.notebook, aui.AuiPaneInfo().Name("notebook_content").CenterPane().PaneBorder(False)) 
 		self.aui_mgr.Update()
  
 		# create menu and tool bars
