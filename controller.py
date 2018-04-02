@@ -185,27 +185,26 @@ class GUI_Builder():
 				mainSizer.growFlexColumnAll()
 				mainSizer.growFlexRow(0)
 
-
-				# mainSizer.addListTree(choices = {"Lorem": [{"Ipsum": "Dolor"}, "Sit"], "Amet": None})
-
 				# with mainSizer.addAui() as myAui:
 				with myFrame.addAui() as myAui:
-					pass
-					with myAui.addPane(default = "center") as myAuiPane:
-						# myAuiPane.addText("Lorem")
-						pass
-					with myAui.addPane() as myAuiPane:
-						# myAuiPane.addText("Ipsum")
-						pass
-					with myAui.addPane() as myAuiPane:
-						# myAuiPane.addText("Dolor")
-						pass
-					with myAui.addPane() as myAuiPane:
-						# myAuiPane.addText("Sit")
-						pass
-					with myAui.addPane() as myAuiPane:
-						# myAuiPane.addText("Amet")
-						pass
+					with myAui.addPane(text = "Current Build", label = "currentBuild", default = "center", sizer = {"type": "flex", "rows": 1, "columns": 1}, minimumSize = (100, 100)) as myAuiPane:
+						myAuiPane.growFlexColumnAll()
+						myAuiPane.growFlexRow(0)
+						myAuiPane.addListTree(choices = {"Lorem": [{"Ipsum": "Dolor"}, "Sit"], "Amet": None})
+
+					with myAui.addPane(text = "Things to Add", label = "options", default = "left", sizer = {"type": "flex", "rows": 1, "columns": 1}, minimumSize = (100, 100)) as myAuiPane:
+						myAuiPane.growFlexColumnAll()
+						myAuiPane.growFlexRow(0)
+						myAuiPane.addListFull(choices = ["Container - Grid", "Container - Flex", "Text", "Image"])
+
+					with myAui.addPane(text = "Current Selection Details", label = "currentSelectionDetails", default = "right", sizer = {"type": "flex", "rows": 3, "columns": 1}, minimumSize = (100, 100)) as myAuiPane:
+						myAuiPane.growFlexColumnAll()
+						myAuiPane.addText("Dolor")
+						myAuiPane.addText("Sit")
+						myAuiPane.addText("Amet")
+
+					# print(myAui)
+
 					# with myAui.addAuiNotebook() as myNotebook:
 					# 	#General
 					# 	with myNotebook.addPage(text = "One", sizer = {"type": "flex", "rows": 7, "columns": 1}) as myNotebookPage:
@@ -235,7 +234,6 @@ class GUI_Builder():
 				# 		topSubSubSizer, bottomSubSubSizer = mySizer.addSplitterDouble(minimumSize = 20, vertical = False, dividerPosition = 130, dividerGravity = 0, panel_0 = {"border": "raised"}, panel_1 = {"border": "raised"})
 						
 				# 		with topSubSubSizer as mySubSubSizer:
-				# 			mySubSubSizer.addListFull(["Container - Grid", "Container - Flex", "Text", "Image"])
 
 				# 		with bottomSubSubSizer as mySubSubSizer:
 				# 			mySubSubSizer.addText("Edit selected item attributes here")
